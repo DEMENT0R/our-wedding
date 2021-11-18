@@ -29,6 +29,10 @@
                 background-image: url(/img/small/arp-170.jpg);
             }
         }
+        .pimg {
+            min-width: 200px;
+            min-height: 200px;
+        }
     </style>
     <link rel="stylesheet" href="/css/glightbox.min.css">
     <script src="/js/glightbox.min.js"></script>
