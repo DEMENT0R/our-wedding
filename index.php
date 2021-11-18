@@ -12,7 +12,7 @@
         }
         .cover{
             height: 100vh;
-            background-image: url(/img/small/arp-251.jpg);
+            background-image: url(/img/full/arp-251.jpg);
             background-size: cover;
             background-position: center;
             /*margin-top: -10px;*/
@@ -28,10 +28,6 @@
             .cover{
                 background-image: url(/img/small/arp-170.jpg);
             }
-        }
-        .pimg {
-            min-width: 200px;
-            min-height: 200px;
         }
     </style>
     <link rel="stylesheet" href="/css/glightbox.min.css">
@@ -68,7 +64,7 @@
 
               if(in_array($ext,$allowed_types))
               {
-              echo '<a href="'.$full_images_dir.'/'.$file.'" class="glightbox"><img data-src="'.$directory.'/'.$file.'" class="pimg lazy" title="'.$file.'" alt="image" /></a>';
+              echo '<a href="'.$full_images_dir.'/'.$file.'" class="glightbox"><img src="'.$directory.'/'.$file.'" class="pimg lazy" title="'.$file.'" alt="image" /></a>';
              $i++;
               }
 
@@ -108,36 +104,5 @@
             }
         });
     </script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-          var lazyloadImages = document.querySelectorAll("img.lazy");    
-          var lazyloadThrottleTimeout;
-
-          function lazyload () {
-            if(lazyloadThrottleTimeout) {
-              clearTimeout(lazyloadThrottleTimeout);
-            }    
-
-            lazyloadThrottleTimeout = setTimeout(function() {
-                var scrollTop = window.pageYOffset;
-                lazyloadImages.forEach(function(img) {
-                    if(img.offsetTop < (window.innerHeight + scrollTop)) {
-                      img.src = img.dataset.src;
-                      img.classList.remove('lazy');
-                    }
-                });
-                if(lazyloadImages.length == 0) { 
-                  document.removeEventListener("scroll", lazyload);
-                  window.removeEventListener("resize", lazyload);
-                  window.removeEventListener("orientationChange", lazyload);
-                }
-            }, 20);
-          }
-
-          document.addEventListener("scroll", lazyload);
-          window.addEventListener("resize", lazyload);
-          window.addEventListener("orientationChange", lazyload);
-        });
-        </script>
 </body>
 </html>
