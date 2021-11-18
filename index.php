@@ -64,7 +64,7 @@
 
               if(in_array($ext,$allowed_types))
               {
-              echo '<a href="'.$full_images_dir.'/'.$file.'" class="glightbox"><img src="'.$directory.'/'.$file.'" class="pimg" title="'.$file.'" alt="image" /></a>';
+              echo '<a href="'.$full_images_dir.'/'.$file.'" class="glightbox"><img loading="lazy" src="'.$directory.'/'.$file.'" class="pimg" title="'.$file.'" alt="image" /></a>';
              $i++;
               }
 
